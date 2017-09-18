@@ -1,4 +1,4 @@
-#/usr/bin/python3.6 is needed
+# /usr/bin/python3.6 is needed
 
 
 line = '======================='
@@ -8,25 +8,27 @@ box = '''
 --------------
 '''
 
-print (box)
+print(box)
 print('I think' 'pl', 150+5, 'dollar is ok')
-print ()
+print()
 name = input('pls input your name:')
 age = input('pls input your age:')
 
-#int(str) transfer string to number
+namenum = len(name)
+print('*name length is', namenum)
+
+# int(str) transfer string to number
 agenum = int(age)
-if agenum >=18:
+if agenum >= 18:
     print('_adult_')
-if agenum <=12:
-    print ('_child_')
+if agenum <= 12:
+    print('_child_')
 else:
-    print ('_teenager_')
+    print('_teenager_')
 
 
-#use "" to include ' as special symbol, or use '' to include "
+# use "" to include ' as special symbol, or use '' to include "
 # and use \ to set " as string.
-print("Welcome back to \"Nokia\", I'm",name,'of',age,'!')
-print (line)
-
-
+print("Welcome back to \"Nokia\", I'm", name, 'of', age, '!')
+print(line)
+print('\tline length is', len(line), 'bytes')
