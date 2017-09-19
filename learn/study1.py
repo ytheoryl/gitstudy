@@ -30,5 +30,6 @@ else:
 # use "" to include ' as special symbol, or use '' to include "
 # and use \ to set " as string.
 print("Welcome back to \"Nokia\", I'm", name, 'of', age, '!')
+print("Welcome back to \"Nokia\", I'm %s of %d!" % (name, agenum))
 print(line)
 print('\tline length is', len(line), 'bytes')
