@@ -20,9 +20,11 @@ print('your name length is', namenum, 'digits')
 
 # int(str) transfer string to number
 agenum = int(age)
-if agenum >= 18:
+if agenum >= 80:
+    print('_really?_')
+elif agenum >= 18:
     print('_adult_')
-elif agenum <= 12:
+elif agenum <= 6:
     print('_child_')
 else:
     print('_teenager_')
