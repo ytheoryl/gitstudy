@@ -4,13 +4,12 @@
 line = '##############'
 
 # ord转换字符为UNICODE编码
-print(ord('A'))
 print(ord('a'))
 print(ord('网'))
 
 print(line)
 
-# chr转换编码为字符
+# chr转换UNICODE编码为字符
 print(chr(97))
 print(chr(32593))
 
@@ -25,22 +24,22 @@ print('\t-->bytes length in UTF-8 is', len('编程'.encode('utf-8')))
 print(line)
 
 chineseword = b'\xe7\xbc\x96\xe7\xa8\x8b'.decode('utf-8')
-print('the received bytes', r"(\xe7\xbc\x96\xe7\xa8\x8b)", 'means', chineseword)
+print('the received bytes', r'(\xe7\xbc\x96\xe7\xa8\x8b)', 'means', '%s' % (chineseword))
 
 print(line)
 
 print('In UTF-8, 中 is', len('中'.encode('utf-8')), 'bytes.')
-print('In GB2312, 中 is', len('中'.encode('gb2312')), 'bytes.')
+print('In GB2312, 中 is %s bytes.' % (len('中'.encode('gb2312'))))
 
 print(line)
 
 name1 = '中'
 name2 = name1
 namecode = name1.encode('gb2312')
-print(namecode)
+print('namecode:', namecode)
 
 newname = name2.encode('utf-8')
-print(newname)
+print('newname: ', newname)
 
 longer = len(namecode) > len(newname)  # check with code is longer
 print('GB2312 is longer than UTF-8:', longer)

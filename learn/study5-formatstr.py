@@ -5,7 +5,7 @@ line = '#################'
 print('Hello, %s' % 'world')
 print('Hello, %s is %s' % ('world', 'ok'))
 # 1000.99被%d取整, %.2f指定小数点位数
-print('Hello %s, you have $%d and $%.2f bonus!' % ('Leo', 99.12345, 99.12345))
+print('Hello %s, you have $%d and $%.2f bonus!' % ('Leo', 99.12345, 99.12845))
 print(line)
 
 # the 5 below means %d starting from 5th (4 spaces before)
@@ -16,3 +16,4 @@ a = 72
 b = 85
 c = (b - a) / a * 100
 print('the improvement is %.1f%s ' % (c, '%'))
+print('the improvement is %.1f%%' % c) # %% means % is string

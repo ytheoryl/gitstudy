@@ -25,11 +25,11 @@ print(c and a)
 print(line)
 
 a = 'ABC'
-b = a
-a = 'XYZ'
+b = a  # b has the same value as a
+a = 'XYZ'  # given a a new value, b still has the old value
 print(a, b)
 print(line)
 
-print(10 / 3)
-print(10 // 3)
-print(10 % 3)
+print(10 / 3)  # 正常除法带小数
+print(10 // 3)  # 地板除，没有余数
+print(10 % 3)  # 显示余数
