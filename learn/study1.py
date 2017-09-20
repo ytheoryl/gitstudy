@@ -1,6 +1,6 @@
 # /usr/bin/python3.6 is needed
 
-from learn. import my_abs
+from learn.study10_def import my_abs
 
 line = '======================='
 box = '''
@@ -18,6 +18,9 @@ age = input('pls input your age:')
 # len() is used to calcuate lenghth
 namenum = len(name)
 print('your name length is', namenum, 'digits')
+
+print(isinstance(name, str))
+print(isinstance(age, int))
 
 # int(str) transfer string to number
 agenum = int(age)
