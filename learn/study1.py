@@ -1,5 +1,6 @@
 # /usr/bin/python3.6 is needed
 
+from learn. import my_abs
 
 line = '======================='
 box = '''
@@ -20,6 +21,8 @@ print('your name length is', namenum, 'digits')
 
 # int(str) transfer string to number
 agenum = int(age)
+agenum = my_abs(agenum)
+
 if agenum >= 80:
     print('_really?_')
 elif agenum >= 18:
