@@ -1,5 +1,5 @@
 #!/usr/bin/env python3.6
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
 
 YUEBAO = 0.04
 WANGSHANG = 0.0415
@@ -8,7 +8,7 @@ ZHENRONGBAO30 = 0.065
 ZHENRONGBAO90 = 0.075
 ZHENRONGBAO365 = 0.085
 
-moneyratioid = {'id1': 'YUEBAO', 'id1-1': 0.04,
+moneyratiodict = {'id1': 'YUEBAO', 'id1-1': 0.04,
               'id2': 'WANGSHANG', 'id2-1': 0.0415,
               'id3': 'ZHENRONGBAO', 'id3-1': 0.0554
 }
