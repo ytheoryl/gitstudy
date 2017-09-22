@@ -30,3 +30,106 @@ def move(x, y, step, angle=0):
     ny = y + step * math.sin(angle)
     return nx, ny
 
+
+def power(x, n):
+    s = 1
+    while n > 0:
+        n = n - 1
+        s = s * x
+    return s
+
+
+print(power(2, 6))
+
+
+def power1(x, n=2):  # n作为默认参数，如果调用函数的时候不输入，就使用默认参数，如果加入了参数，就以参数为准
+    x = x ** n
+    return x
+
+
+print(power1(5))
+print(power1(2, 3))
+print('*************************')
+
+
+# 报名表，设定一些默认值
+def school(name, gender, age=6, city='Chengdu'):
+    if gender == 'male':
+        gender = 'male  '  # 为了显示排版整洁，把male和female对齐，增加了2个空格
+    if not isinstance(age, int):
+        raise TypeError('age should be int.')
+    print('Name:', name, '\t\v',
+          'Age:', age, '\t\v',
+          'Gender:', gender, '\t\v',
+          'City:', city, '\t\v'
+          )
+
+
+school('Li', age=11, gender='female')
+school('Leo', 'male', 5)
+school('Ann', 'female', city='Beijing')
+print('*************************')
+
+
+# 如果默认参数指向一个可变的内容，在多次执行默认参数的时候，被指向的内容会不断的累加。如果带参数的引用，不影响。
+def add_end(li=[]):
+    li.append('END')
+    return li
+
+
+print(add_end([1, 2, 3]))
+print(add_end([1, 2, 3]))
+print(add_end(['a', 'b', 'c']))
+print(add_end())
+print(add_end())
+print(add_end())
+
+
+# 解决方法是默认参数指向到NONE。如果不带参数的引用，会先把默认值重置为空list，这样即使重复执行默认参数，也不会累加。
+def add_end1(lo=None):
+    if lo is None:
+        lo = []
+    lo.append('END')
+    return lo
+
+
+print(add_end1([1, 2]))
+print(add_end1())
+print(add_end1())
+
+
+print('*************************')
+
+
+# given a,b,c。。。 to calculate a^2+b^2+c^2。。。数字数量不定，默认接收list或者tuple
+def calc(numbers):
+    he = 0
+    for n in numbers:
+        he = he + n * n
+    return he
+
+
+# 因为参数numbers接受一个对象，所以不能单独输入多个数字，只能通过list和tuple作为输入
+print(calc([1,2,3]))
+print(calc((1,3,2)))
+#print(calc())  此时不能带空参数
+
+# 可变参数，加上星号。既可以接收list，也可以接收数字
+def calc1(*numbers):
+    he = 0
+    for n in numbers:
+        he = he + n * n
+    return he
+
+
+print(calc1())  # 可变参数的时候，可以带空参数
+print(calc1(2,4,3,2))
+tup1 = (2,3,4,2)
+print(calc1(*tup1))  # 带*可以直接把list和tuple带入函数
+# *tup1表示把tup1这个list的所有元素作为可变参数传进去
+# 可变参数把传入的任意个参数自动组装为一个tuple
+
+print('*************************')
+
+# 而，关键字参数把传入的任意个参数，自动组装为一个dict
+

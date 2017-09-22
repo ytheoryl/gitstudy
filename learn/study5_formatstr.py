@@ -16,4 +16,4 @@ a = 72
 b = 85
 c = (b - a) / a * 100
 print('the improvement is %.1f%s ' % (c, '%'))
-print('the improvement is %.1f%%' % c) # %% means % is string
+print('the improvement is %.1f%%' % c) # %% means the 2nd % is string

@@ -15,3 +15,11 @@ print(x, y)
 
 r = move(100, 100, 60, math.pi / 6)
 print(r)
+
+print('*****************************************')
+
+stra = 'adsf# k#j'
+son = stra.find('#')
+print(son)
+
+
