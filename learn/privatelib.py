@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import math
-import subprocess
+import subprocess  # subprocess replaced commands
 
 
 def exec_shell(cmd):

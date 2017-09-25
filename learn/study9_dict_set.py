@@ -63,4 +63,20 @@ book = 'abcd'
 book.replace('a', 'X')
 print(book)
 
+print('********************************************************')
 
+
+def scores(**kw):
+    print('    name  score')
+    print('-------------------')
+    for name, score in kw.items():
+        print('%10s   %d' % (name, score))
+    print()
+
+
+scores(adam=99, lisa=88, bart=77)
+print('***************')
+
+dicta = {'ibm':1,'hp':2,'intel':3}
+for x, y in dicta.items():
+    print(y, x)

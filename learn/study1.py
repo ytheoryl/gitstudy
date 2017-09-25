@@ -1,6 +1,5 @@
 # /usr/bin/python3.6 is needed
 
-from learn.study10_def import my_abs
 
 line = '======================='
 box = '''
@@ -24,7 +23,7 @@ print(isinstance(age, int))
 
 # int(str) transfer string to number
 agenum = int(age)
-agenum = my_abs(agenum)
+agenum = abs(agenum)
 
 if agenum >= 80:
     print('_really?_')

@@ -30,7 +30,7 @@ def move(x, y, step, angle=0):
     ny = y + step * math.sin(angle)
     return nx, ny
 
-
+# 位置参数
 def power(x, n):
     s = 1
     while n > 0:
@@ -52,7 +52,7 @@ print(power1(2, 3))
 print('*************************')
 
 
-# 报名表，设定一些默认值
+# 默认参数，报名表，设定一些默认值
 def school(name, gender, age=6, city='Chengdu'):
     if gender == 'male':
         gender = 'male  '  # 为了显示排版整洁，把male和female对齐，增加了2个空格
@@ -66,7 +66,7 @@ def school(name, gender, age=6, city='Chengdu'):
 
 
 school('Li', age=11, gender='female')
-school('Leo', 'male', 5)
+school('Leo', 'male', 15, 'shanghai')
 school('Ann', 'female', city='Beijing')
 print('*************************')
 
@@ -100,7 +100,7 @@ print(add_end1())
 
 print('*************************')
 
-
+# 可变参数
 # given a,b,c。。。 to calculate a^2+b^2+c^2。。。数字数量不定，默认接收list或者tuple
 def calc(numbers):
     he = 0
@@ -133,3 +133,86 @@ print('*************************')
 
 # 而，关键字参数把传入的任意个参数，自动组装为一个dict
 
+
+def person(name, age, **kw):
+    if 'city' in kw:
+        pass
+    if 'job' in kw:
+        pass
+    print('name:', name, 'age:', age, 'other:', kw)
+
+
+person('li', 20)
+person('meimei', 15,  hobby='music, travel')
+person('john', 50, hobby='reading', city='paris')
+
+extra = {'city': 'beijing', 'job': 'manager'}
+person('feng', 40, **extra)
+print(extra['city'])
+
+# 命名关键字参数, 限制输入的关键字参数
+
+
+def person1(name, age, *, city, job):
+    print(name, age, city, job)
+
+
+# 只接收city job
+person1('liu', 33, city='chengdu', job='seller')
+#person1('zhao', 35)
+# TypeError: person1() missing 2 required keyword-only arguments: 'city' and 'job'
+
+# python参数定义的顺序必须是：必选参数，默认参数，可变参数，命名关键字参数和关键字参数
+# positional arguments, keyword-only argument
+
+
+def f1(a, b, c=0, *args, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'args =', args, 'kw =', kw)
+
+
+def f2(a, b, c=0, *, d, **kw):
+    print('a =', a, 'b =', b, 'c =', c, 'd =', d, 'kw =', kw)
+
+
+f1(13, 23, 4, (1,2,3), city='shanghai')
+f1(*(1,2,3,(1,2)), city='shanghai')
+f1(1,2,3,'a','bc',xy=100)
+print('*************************')
+f2(33,22,d=100,job='mgr')
+
+args2 = (1,2)
+f2(*args2, d=100, city='bj')
+kw2 = {'d': 100, 'city': 'bj'}
+f2(*args2, **kw2)
+
+# *args是可变参数，接收的是一个tuple ()
+# **kw是关键字参数，接收的是一个dict {}
+
+print('*************************')
+
+# 递归函数--函数在内部调用自己
+# 计算n! = 1x2x3x...xn
+
+
+def fact(n):
+    if n == 1:
+        return 1
+    return n * fact(n-1)
+
+
+print(fact(5))
+
+#
+
+
+def fact1(n):
+    return fact_iter(n, 1)
+
+
+def fact_iter(num, product):
+    if num == 1:
+        return product
+    return fact_iter(num - 1, num * product)
+
+
+print(fact1(5))

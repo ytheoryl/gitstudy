@@ -1,25 +1,20 @@
 #!/var/bin/env python3
 # -*- coding: utf-8 -*-
 
-import math
-from learn.study10_def import my_abs
-from learn.study10_def import move
 
-print(my_abs(-33))
-
-print('*****************************************')
-
-print('Movement in game:')
-x, y = move(100, 100, 60, math.pi / 6)
-print(x, y)
-
-r = move(100, 100, 60, math.pi / 6)
-print(r)
-
-print('*****************************************')
-
-stra = 'adsf# k#j'
-son = stra.find('#')
-print(son)
+def info(name, *, gender, city='beijing', age):
+    print('Personal Info')
+    print('----------------')
+    print('    Name: %s' % name)
+    print('%9s %s' % ('Gender:', gender))
+    print('    City: %s' % city)
+    print('     Age: %s' % age)
+    print()
 
 
+info('bob', gender='male', age=20)
+
+
+args = ('ag', 'be', 'cs')
+print('%s, %s!' % ('hello', ','.join(args)))
+print('%s, %s!' % ('hello', ', '.join(args)))

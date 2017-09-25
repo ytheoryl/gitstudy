@@ -8,6 +8,8 @@ ZHENRONGBAO30 = 0.065
 ZHENRONGBAO90 = 0.075
 ZHENRONGBAO365 = 0.085
 
+
+
 moneyratiodict = {'id1': 'YUEBAO', 'id1-1': 0.04,
               'id2': 'WANGSHANG', 'id2-1': 0.0415,
               'id3': 'ZHENRONGBAO', 'id3-1': 0.0554
