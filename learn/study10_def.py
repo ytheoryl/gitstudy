@@ -202,7 +202,9 @@ def fact(n):
 
 print(fact(5))
 
-#
+# 尾递归，在函数返回的时候，调用自身，并且，return语句不能包含表达式。
+# 这样，编译器可以把尾递归作优化，使得递归本身无论被调用多少次，都只占用一个栈帧，避免出现栈溢出。
+# 然而，python的解释器没有做优化，还是会溢出。大多数编程语言都没有针对尾递归优化。
 
 
 def fact1(n):
@@ -213,6 +215,6 @@ def fact_iter(num, product):
     if num == 1:
         return product
     return fact_iter(num - 1, num * product)
+# 上面的returnbaohan了自身，单没有表达式
 
-
-print(fact1(5))
+print(fact1(1000))
