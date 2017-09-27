@@ -2,19 +2,11 @@
 # -*- coding: utf-8 -*-
 
 
-def info(name, *, gender, city='beijing', age):
-    print('Personal Info')
-    print('----------------')
-    print('    Name: %s' % name)
-    print('%9s %s' % ('Gender:', gender))
-    print('    City: %s' % city)
-    print('     Age: %s' % age)
-    print()
 
+L = []
+n = 0
+while n <= 97:
+    L.append(n+3)
+    n = n + 3
 
-info('bob', gender='male', age=20)
-
-
-args = ('ag', 'be', 'cs')
-print('%s, %s!' % ('hello', ','.join(args)))
-print('%s, %s!' % ('hello', ', '.join(args)))
+print(L)

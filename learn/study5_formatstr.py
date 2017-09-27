@@ -17,3 +17,23 @@ b = 85
 c = (b - a) / a * 100
 print('the improvement is %.1f%s ' % (c, '%'))
 print('the improvement is %.1f%%' % c) # %% means the 2nd % is string
+
+
+def info(name, *, gender, city='beijing', age):
+    print('Personal Info')
+    print('----------------')
+    print('    Name: %s' % name)
+    print('%9s %s' % ('Gender:', gender))
+    print('    City: %s' % city)
+    print('     Age: %s' % age)
+    print()
+
+
+info('bob', gender='male', age=20)
+
+
+
+args = ('ag', 'be', 'cs')
+print('%s, %s!' % ('hello', ','.join(args)))
+print('%s, %s!' % ('hello', ', '.join(args)))
+

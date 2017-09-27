@@ -217,4 +217,40 @@ def fact_iter(num, product):
     return fact_iter(num - 1, num * product)
 # 上面的returnbaohan了自身，单没有表达式
 
-print(fact1(1000))
+print(fact1(5))
+
+
+print('***********汉诺塔递归')
+def move(n, a, b, c):
+    if n == 1:
+        print(a, '->', c)
+    else:
+        move(n-1, a, c, b)
+        move(1, a, b, c)
+        move(n-1, b, a, c)
+
+
+move(3, 'A', 'B', 'C')
+
+'''完整过程解析
+a = A
+b = B
+c = C
+
+当n为3：
+move(2,a,c,b)
+move(1,a,b,c)
+move(2,b,a,c)
+------------------------------------
+第一次递归，n变成2，其他参数变为: a=A, b=C, c=B
+move(1,a,c,b) : a=A, b=B, c=C : A->C
+move(1,a,b,c) : a=A, b=C, c=B: A->B
+move(1,b,a,c) : a=C, b=A, c=B: C->B
+------------------------------------
+第一个递归完成，开始第二行的递归: A->C
+------------------------------------
+第二个递归完成，开始第三行递归，其他参数变为: a=B, b=A, c=C
+move(1,a,c,b) : a=B, b=C, c=A: B->A
+move(1,a,b,c) : a=B, b=A, c=C: B->C
+move(1,b,a,c) : a=A, b=B, c=C: A->C
+'''
