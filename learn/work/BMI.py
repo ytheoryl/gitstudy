@@ -8,11 +8,11 @@ bmi = float(weight) / (float(height) ** 2)
 if bmi < 18.5:
     result = '过轻[<18.5]'
 elif bmi < 25:
-    result = '正常[18.5-25]'
+    result = '正常[18.5~25]'
 elif bmi < 28:
-    result = '过重[25-28]'
+    result = '过重[25~28]'
 elif bmi < 32:
-    result = '肥胖[28-32]'
+    result = '肥胖[28~32]'
 else:
     result = '严重肥胖[>32]'
 
