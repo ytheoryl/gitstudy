@@ -1,0 +1,109 @@
+================================================================================
+                    Python Scripts Quick Reference Guide
+================================================================================
+                         Directory: netconf/
+                         Generated: 2026-04-13
+================================================================================
+
+
+1. dnslist.py — DNS 域名解析收集工具
+--------------------------------------------------------------------------------
+   用途:  对指定域名反复执行 nslookup (共10次)，收集所有解析到的 IPv4/IPv6
+          地址，去重后按顺序保存到文件。
+
+   用法:
+       python dnslist.py -n <域名>
+
+   示例:
+       python dnslist.py -n www.google.com
+
+   输出:  dns_<域名>.txt  (如 dns_www.google.com.txt)
+          文件中 IPv4 按数字大小排序，IPv6 单独分组，两组之间用空行分隔。
+
+   说明:  每次 nslookup 间隔随机 20~30 秒，10 次后自动退出并打印汇总。
+
+
+2. backup_switch_sg_ssh.py — 交换机 SSH 备份工具
+--------------------------------------------------------------------------------
+   用途:  通过 SSH 连接到交换机，自动执行 show version / show vlan /
+          show run 等命令，将输出保存到本地文件，用于配置备份。
+
+   依赖:  pip install pexpect  (需要系统有 ssh 命令)
+
+   用法:
+       python backup_switch_sg_ssh.py --swinfo sshsw.txt --out-dir .
+       python backup_switch_sg_ssh.py --swinfo sshsw.txt --timeout 20
+
+   输入文件格式 (sshsw.txt):
+       name,ip,username,password[,enable_password]
+
+   输出:  在输出目录下生成 <name>_<ip>_<时间戳>.txt
+
+
+3. backup_switch_cd_telnet.py — 交换机 Telnet 备份工具
+--------------------------------------------------------------------------------
+   用途:  通过 Telnet 连接到交换机 (华为/H3C/Cisco)，自动执行相应命令
+          收集配置信息并保存到本地文件。
+
+   依赖:  pip install pexpect  (需要系统有 telnet 命令)
+
+   用法:
+       python backup_switch_cd_telnet.py --swinfo swinfo.txt --out-dir .
+       python backup_switch_cd_telnet.py --swinfo swinfo.txt --default-password "密码"
+
+   环境变量方式传入密码:
+       Windows:  $env:SWITCH_PASSWORD="密码"
+       Linux:    export SWITCH_PASSWORD="密码"
+
+   输入文件格式 (swinfo.txt):
+       #telnet
+       position,model,ip,password
+       position,model,ip
+
+   支持型号:  h3c, huawei, cisco
+
+
+4. sendmail.py — 邮件发送工具 (Microsoft 365 Direct Send)
+--------------------------------------------------------------------------------
+   用途:  通过 Microsoft 365 Direct Send 方式发送邮件，支持附件和自定义
+          标题/正文。仅限组织内部收件人。
+
+   用法:
+       python sendmail.py --target <收件人> [--title "标题"] [--message "正文"] [--file 附件路径]
+
+   示例:
+       python sendmail.py --target abc@synaxg.com --title "Job Alert" --file /var/log/123.txt --message "okok"
+       python sendmail.py --target user1@synaxg.com user2@synaxg.com --title "Weekly Report"
+
+   说明:  Direct Send 模式不需要认证，但仅限发送到组织内部地址，且发送方
+          IP 需在 SPF 记录中。
+
+
+5. cleanup_30d_files.py — 过期文件清理工具
+--------------------------------------------------------------------------------
+   用途:  扫描目标目录，列出修改时间超过 30 天的文件，经用户确认后删除，
+          同时清理产生的空目录。操作记录保存到日志文件。
+
+   用法:
+       python cleanup_30d_files.py <目标目录>
+
+   示例:
+       python cleanup_30d_files.py D:\backup\logs
+
+   说明:  删除前会列出清单并要求输入 y/n 确认，不会静默删除。
+          日志文件命名: delete30_<时间戳>.txt
+
+
+6. solve_rect.py — 长方形拼接数学求解器
+--------------------------------------------------------------------------------
+   用途:  数学计算工具。求解"用 4 个相同的小长方形拼成一个周长为 100 的
+          大长方形"的所有整数解，枚举所有合法的拼法 (1x4排列 / 2x2堆叠 /
+          旋转型)。
+
+   用法:
+       python solve_rect.py
+
+   输出:  直接在终端打印所有解，包含大/小长方形尺寸和拼法类型。
+
+
+================================================================================

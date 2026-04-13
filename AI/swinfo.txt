@@ -1,0 +1,13 @@
+#telnet
+rack6core,h3c,10.28.40.254,CD25@incu
+rack2,h3c,10.85.8.31,CD25@incu
+rack26,cisco,10.85.8.32,CD25@incu
+rack30,h3c,10.85.8.33,CD25@incu
+rack3,h3c,10.85.8.34,CD25@incu
+rack46,cisco,10.85.8.35,CD25@incu
+rack47,h3c,10.85.8.38,CD25@incu
+rack48,h3c,10.85.8.37,CD25@incu
+rack7,huawei,10.85.8.36,CD25@incu
+coresw,h3c,10.28.3.254,CD25@incu
+
+

@@ -1,0 +1,28 @@
+=== Backup Start: 2026-03-10T16:10:23.212472 ===
+name=c9200, ip=10.13.196.9, username=admin, type=cisco9200
+
+--- Login Phase 1 ---
+Warning: Permanently added '10.13.196.9' (RSA) to the list of known hosts.
+Password:
+
+--- Login Phase 2 ---
+ 
+
+
+c9200L>
+
+$ enable
+enable
+Password: 
+
+% Access denied
+
+c9200L>
+
+--- Privileged Prompt Check ---
+
+[priv-prompt-timeout]
+
+[ERROR] RuntimeError: cisco9200 enable failed: privileged prompt (#) not reached
+elapsed_seconds=13.82
+=== Backup End (Failed): 2026-03-10T16:10:37.033687 ===

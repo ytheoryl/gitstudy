@@ -1,0 +1,11 @@
+#common
+dell3148,10.13.196.254,synaxg-networkteam,SG23@sola
+c1000,10.13.196.21,admin,SG23@sola
+
+#cisco1300
+labc1300#1,10.13.30.254,admin,SG23@sola
+labc1300#6,10.13.196.30,admin,SG23@sola
+labc1300#15,10.13.196.31,admin,SG23@sola
+
+#cisco9200
+c9200,10.13.196.9,admin,SG23@sola,SG23@solaris
